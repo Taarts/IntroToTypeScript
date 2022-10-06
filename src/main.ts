@@ -49,27 +49,33 @@ let z: string
   const message = `Congrats ${answer} is correct. You have ${score} points.`
   console.log(message)
 }
-// this defines a variable of type object
-const myCar = {
-  // to use -v- you need to use the type annotation ('')
-  // better to use "camelCase" for property names
-  'the make of the car': 'BMW',
-  'the-make-of-the-car': 'BMW',
-  make: 'BMW',
-  model: 'Mini',
-  year: 2016,
-}
 
-myCar['the make of the car'] = 'Audi'
-myCar['the-make-of-the-car'] = 'Audi'
+// Same v
+// myCar.make
+// myCar['make']
 
-console.log(`My car is a ${myCar.make}`)
+// myCar['the make of the car'] = 'Audi'
+// myCar['the-make-of-the-car'] = 'Audi'
+
+// console.log(`My car is a ${myCar.make}`)
+// console.log(`My car is a ${myCar['make']}`)
 
 // like a class in C# this creates the "SHAPE" of the object
 type Car = {
   make: string
   model: string
   year: number
+}
+
+// this defines a variable of type object
+const myCar = {
+  // to use -v- you need to use the type annotation ('')
+  // better to use "camelCase" for property names
+  // 'the make of the car': 'BMW',
+
+  make: 'BMW',
+  model: 'Mini',
+  year: 2016,
 }
 
 // -------------------
@@ -87,11 +93,11 @@ const otherCar: Car = {
 
 console.log(`the other car us a ${otherCar.model}`)
 
-/*const myOtherCar = {
-  make: myCar.make,
-  model: myCar.model,
-  year: 2020,
-} */
+// const myOtherCar = {
+//   make: myCar.make,
+//   model: myCar.model,
+//   year: 2020,
+// }
 
 const myOtherCar: Car = {
   // v--- spread operator takes an existing object and edits the properties
@@ -101,3 +107,6 @@ const myOtherCar: Car = {
 }
 
 console.table(myOtherCar)
+console.table(myCar, theirCar, otherCar)
+
+// <----- Arrays ----->
